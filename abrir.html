@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de envío</title>
+    <link rel="stylesheet" type="text/css" href="abrir.css">
+  
+</head>
+<body>
+    
+ <nav>
+    <span id="usuarioConectado"></span>
+    <button onclick="cerrarSesion()"><img src="cerrar.png" alt="Buscar" class="btn-img" width="40" height="40"></button>
+    </nav>
+ 
+<h1>Formulario de envio</h1>
+<form id="registerForm" action="https://sheetdb.io/api/v1/6xddpttp6vp1b" method="post" id="sheetdb-form">
+  <label for="NombresyApellido">Nombres y Apellido:</label>
+    <input type="text" id="NombresyApellido" name="data[NombresyApellido]" required><br><br> 
+    <label for="Dni">Dni:</label>
+    <input type="text" id="Dni" name="data[Dni]" required><br><br> 
+  <label for="direccion">Dirección:</label>
+  <input type="text" id="direccion" name="data[direccion]"required><br><br>
+  <label for="localidad">Localidad:</label>
+  <input type="text" id="localidad" name="data[localidad]"required><br><br>
+  <label for="provincia">Provincia:</label>
+    <select id="provincia" onchange="updatePrices()">
+        <option value="SELECCIONAR">SELECCIONAR</option>
+      <option value="CABA">CABA</option>
+        <option value="GBA">GBA</option>
+        <option value="ROSARIO">ROSARIO</option>
+        <option value="SANTA_FE">SANTA FE</option>
+        <option value="VILLA_MARIA">VILLA MARÍA</option>
+        <option value="CORDOBA">CÓRDOBA</option>
+    </select><br><br>
+    <label for="codigoPostal">Código Postal:</label>
+    <input type="text" id="codigoPostal" name="data[codigoPostal]" required><br><br> 
+    <label for="Telefono">Telefono:</label>
+    <input type="text" id="Telefono" name="data[Telefono]" required><br><br> 
+  </form>
+  <h2> Confirmado de pago</h2>
+  <table>
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Título</th>
+                <th>Precio</th>
+                <th>Talle</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody id="pedidoTable">
+  
+        </tbody>
+  </table>
+    <p>Envio: <span id="envio">0</span> </p>
+  
+ <p>Total: <span id="total">$0</span></p>
+
+
+ <a onclick="alertForms()"><button onclick="confirmPayment()">Confirmar pago</button></a>
+  <script src="script.js"></script>
+<script src="pedido.js"></script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          // Obtener el usuario conectado de localStorage
+          var usuarioConectado = JSON.parse(localStorage.getItem("usuarioConectado"));
+        
+          if (usuarioConectado) {
+            // Mostrar el nombre del usuario conectado en el elemento con id "usuarioConectado"
+            document.getElementById("usuarioConectado").textContent = usuarioConectado.email;
+          } else {
+            // Redirigir a la página de inicio de sesión si no hay usuario conectado
+            window.location.href = "sesion.html";
+          }
+        });
+        
+        function cerrarSesion() {
+          // Eliminar el usuario conectado de localStorage
+          localStorage.removeItem("usuarioConectado");
+        
+          // Redirigir a la página de inicio de sesión
+          window.location.href = "index.html";
+        }
+        </script>
+
+      
+
+<script>
+  // Recupera la información del carrito del Local Storage
+  var carritoInfoJSON = localStorage.getItem('carritoInfo');
+
+  // Verifica si hay información del carrito
+  if (carritoInfoJSON) {
+      // Parsea el JSON y obtén el objeto de información del carrito
+      var carritoInfo = JSON.parse(carritoInfoJSON);
+
+      // Obtén la tabla de pedidos
+      var pedidoTable = document.getElementById('pedidoTable');
+
+      // Recorre los detalles del carrito y agrega filas a la tabla de pedidos
+      for (var i = 0; i < carritoInfo.detalles.length; i++) {
+          var detalle = carritoInfo.detalles[i];
+
+          // Crea una nueva fila en la tabla de pedidos
+          var newRow = pedidoTable.insertRow(-1);
+
+          // Agrega celdas a la fila con la información del detalle
+          var newCell1 = newRow.insertCell(0);
+          newCell1.innerHTML = detalle.codigo;
+
+          var newCell2 = newRow.insertCell(1);
+          newCell2.innerHTML = detalle.titulo;
+
+          var newCell3 = newRow.insertCell(2);
+          newCell3.innerHTML = detalle.precio;
+
+          var newCell4 = newRow.insertCell(3);
+          newCell4.innerHTML = detalle.talle;
+
+          var newCell5 = newRow.insertCell(4);
+          newCell5.innerHTML =  detalle.cantidad 
+
+          var newCell6 = newRow.insertCell(5);
+          newCell6.innerHTML = detalle.subtotal;
+      }
+  }
+</script>
+
+<script>
+  function alertForms() {
+    var direccion = document.getElementById("NombresyApellido").value.trim();
+    var direccion = document.getElementById("Dni").value.trim();
+    var direccion = document.getElementById("direccion").value.trim();
+    var localidad = document.getElementById("localidad").value.trim();
+    var provincia = document.getElementById("provincia").value;
+    var codigoPostal = document.getElementById("codigoPostal").value.trim();
+    var direccion = document.getElementById("Telefono").value.trim();
+
+    if (NombresyApellido && Dni && direccion && localidad && provincia !== "SELECCIONAR" && codigoPostal && Telefono) {
+      alert("Disculpa descanse unos minutos para progresar de pago");
+      window.location.href = "index.html";
+    } 
+  
+  }
+</script>
+<script>
+  function confirmPayment() {
+    // Validate the form here
+    var NombresyApellido = document.getElementById('NombresyApellido').value;
+    var Dni = document.getElementById('Dni').value;
+    var direccion = document.getElementById('direccion').value;
+    var localidad = document.getElementById('localidad').value;
+    var provincia = document.getElementById('provincia').value;
+    var codigoPostal = document.getElementById('codigoPostal').value;
+    var Telefono = document.getElementById('Telefono').value;
+
+    if (!direccion || !localidad || provincia === 'SELECCIONAR' || !codigoPostal) {
+      // Show alert if form is incomplete
+      alert("Por favor, complete todos los campos del formulario de envío.");
+      return;
+    }
+
+    // Update WhatsApp link with form data and selected table columns
+    var mensaje = "Nuevo pedido Sr " + document.getElementById('usuarioConectado').innerText +
+      ", formulario: NombresyApellido - " + NombresyApellido + ", Dni - " + Dni + ", Dirección - " + direccion + ", Localidad - " + localidad +
+      ", Provincia - " + provincia + ", Código Postal - " + codigoPostal +
+      ", Telefono - " + Telefono + ", tabla - ";
+
+    // Iterate through each row in the table and extract desired columns
+    var tableRows = document.getElementById('pedidoTable').getElementsByTagName('tr');
+    for (var i = 0; i < tableRows.length; i++) {
+      var columns = tableRows[i].getElementsByTagName('td');
+      mensaje += "\nCódigo - " + columns[0].innerText +
+                 ", Precio - " + columns[2].innerText +
+                 ", Talle - " + columns[3].innerText +
+                 ", Cantidad - " + columns[4].innerText +
+                 ", Subtotal - " + columns[5].innerText;
+    }
+    
+
+    // Add total to the message
+    mensaje += "\nTotal - " + document.getElementById('total').innerText;
+
+    // Construct the WhatsApp link
+    var whatsappLink = "https://api.whatsapp.com/send?phone=5491160224513&text=" + encodeURIComponent(mensaje);
+
+    // Show the WhatsApp link for testing (you can remove this line in production)
+    alert(whatsappLink);
+
+    // Redirect to WhatsApp
+    window.location.href = whatsappLink;
+  }
+</script>
+</body>
+</html>

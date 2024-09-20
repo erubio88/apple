@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+</head>
+<body>
+    <nav>
+        <a class="nav-link" href="sesion.html" id="login-link"><img src="login.png" alt="Atras"></a>
+    </nav>
+
+    <h1>Registro</h1>
+    <form id="registerForm" >
+        <label for="nombre">Nombre y apellido:</label>
+        <input type="text" id="nombre" name="data[nombre]"required><br><br>
+         <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="data[telefono]"required><br><br>
+        <label for="emailRegistro">Email:</label>
+        <input type="email" id="emailRegistro" name="data[emailRegistro]" required><br><br>
+        <label for="passwordRegistro">Contraseña:</label>
+        <input type="password" id="passwordRegistro" name="data[passwordRegistro]" required><br><br>
+        <label for="confirmPassword">Repetir contraseña:</label>
+        <input type="password" id="confirmPassword" name="data[confirmPassword]"required><br><br>
+ 
+        <label for="aceptar">Acepto los términos y condiciones:</label>
+        <input type="checkbox" id="aceptar" required><br><br>
+        <button type="submit" class="signupbtn" onclick="guardar()">Crear cuenta</button>
+      </form>
+
+      
+      <script src="script.js"></script>
+     
+</body>
+</html>

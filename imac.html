@@ -1,0 +1,150 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tienda Online</title>
+        <link rel="stylesheet" type="text/css" href="prueba.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="carrito.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html"> <img src="artbuy.png" alt="Logo" width="100" height="100" id="logo"></a>
+                </div>
+                <div class="menu-toggle">
+                    <img src="menu.jpeg" alt="Menu" id="menu-icon">
+                </div>
+                <ul class="menu">
+                    
+                    <li><a href="#">Categorías</a>
+                        <ul class="submenu">
+                            <li><a href="celulares.html">CELULARES</a></li>
+                            <li><a href="ipads.html">IPADS</a></li>
+                            <li><a href="macbooks.html">MACBOOKS</a></li>
+                            <li><a href="waltchs.html">WALTCHS</a></li>
+                            <li><a href="imac.html">IMAC</a></li>
+                            <li><a href="accesorios.html">ACCESORIOS</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contactos.html">Contactos</a></li>
+                    <li class="cart-icon"><a href="compras.html"> <img src="carrito.png" alt="Carrito" width="30" height="30"></a></li>
+                </ul>
+                <form id="form-inline" class="form-inline">
+                    <input class="form-control" type="search" id="searchInput" placeholder="Buscar productos" aria-label="Search">
+                    <button type="button" id="buscar-btn">
+                        <img src="buscar.png" alt="Buscar" class="btn-img" width="40" height="40">
+                    </button>
+                </form>
+            </div>
+        </nav>
+    <aside id="catalogo"><div class="catalogo-item"><span id="codigo">ART-00067</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_686126-MLU69781631242_062023-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">iMac M1 24 8RAM / 256GB / 8CPU / 8GPU</span></H5><br><p>$ <span id="precio">2320312.5</span></p><br><p> U$S <span id="oferta">1856.25</span></p><br><input type="number" id="cantidad1"><br><button onclick="agregarAlCarrito('ART-00067', 'iMac M1 24 8RAM / 256GB / 8CPU / 8GPU', '2320312.5', 'cantidad1')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00068</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_686126-MLU69781631242_062023-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">iMac M1 24 8RAM / 512GB / 8CPU / 8GPU</span></H5><br><p>$ <span id="precio">2640625</span></p><br><p> U$S <span id="oferta">2112.5</span></p><br><input type="number" id="cantidad2"><br><button onclick="agregarAlCarrito('ART-00068', 'iMac M1 24 8RAM / 512GB / 8CPU / 8GPU', '2640625', 'cantidad2')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00069</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_686126-MLU69781631242_062023-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">iMac M3 24 8RAM / 256GB / 8CPU / 8GPU</span></H5><br><p>$ <span id="precio">3109375</span></p><br><p> U$S <span id="oferta">2487.5</span></p><br><input type="number" id="cantidad3"><br><button onclick="agregarAlCarrito('ART-00069', 'iMac M3 24 8RAM / 256GB / 8CPU / 8GPU', '3109375', 'cantidad3')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00070</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_686126-MLU69781631242_062023-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">iMac M3 24 8RAM / 256GB / 8CPU / 10GPU</span></H5><br><p>$ <span id="precio">3429687.5</span></p><br><p> U$S <span id="oferta">2743.75</span></p><br><input type="number" id="cantidad4"><br><button onclick="agregarAlCarrito('ART-00070', 'iMac M3 24 8RAM / 256GB / 8CPU / 10GPU', '3429687.5', 'cantidad4')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00071</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_686126-MLU69781631242_062023-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">iMac M3 24 8RAM / 512GB / 8CPU / 10GPU</span></H5><br><p>$ <span id="precio">3781250</span></p><br><p> U$S <span id="oferta">3025</span></p><br><input type="number" id="cantidad5"><br><button onclick="agregarAlCarrito('ART-00071', 'iMac M3 24 8RAM / 512GB / 8CPU / 10GPU', '3781250', 'cantidad5')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00072</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_686126-MLU69781631242_062023-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">iMac M3 24 16RAM / 256GB / 8CPU / 8GPU</span></H5><br><p>$ <span id="precio">3460937.5</span></p><br><p> U$S <span id="oferta">2768.75</span></p><br><input type="number" id="cantidad6"><br><button onclick="agregarAlCarrito('ART-00072', 'iMac M3 24 16RAM / 256GB / 8CPU / 8GPU', '3460937.5', 'cantidad6')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00073</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_686126-MLU69781631242_062023-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">iMac M3 24 16RAM / 512GB / 8CPU / 10GPU</span></H5><br><p>$ <span id="precio">4664062.5</span></p><br><p> U$S <span id="oferta">3731.25</span></p><br><input type="number" id="cantidad7"><br><button onclick="agregarAlCarrito('ART-00073', 'iMac M3 24 16RAM / 512GB / 8CPU / 10GPU', '4664062.5', 'cantidad7')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00074</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_880349-MLA71949295464_092023-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">Mac Mini M2 8RAM / 256GB / 8CPU / 10GPU</span></H5><br><p>$ <span id="precio">1156250</span></p><br><p> U$S <span id="oferta">925</span></p><br><input type="number" id="cantidad8"><br><button onclick="agregarAlCarrito('ART-00074', 'Mac Mini M2 8RAM / 256GB / 8CPU / 10GPU', '1156250', 'cantidad8')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00075</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_880349-MLA71949295464_092023-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">Mac Mini M2 8RAM / 512GB / 8CPU / 10GPU</span></H5><br><p>$ <span id="precio">1468750</span></p><br><p> U$S <span id="oferta">1175</span></p><br><input type="number" id="cantidad9"><br><button onclick="agregarAlCarrito('ART-00075', 'Mac Mini M2 8RAM / 512GB / 8CPU / 10GPU', '1468750', 'cantidad9')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00076</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_880349-MLA71949295464_092023-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">Mac Mini M2 Pro 16RAM / 512GB / 10CPU / 16GPU</span></H5><br><p>$ <span id="precio">2492187.5</span></p><br><p> U$S <span id="oferta">1993.75</span></p><br><input type="number" id="cantidad10"><br><button onclick="agregarAlCarrito('ART-00076', 'Mac Mini M2 Pro 16RAM / 512GB / 10CPU / 16GPU', '2492187.5', 'cantidad10')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00077</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_880349-MLA71949295464_092023-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">Mac Mini M2 Pro 16RAM / 1TB / 10CPU / 16GPU</span></H5><br><p>$ <span id="precio">3218750</span></p><br><p> U$S <span id="oferta">2575</span></p><br><input type="number" id="cantidad11"><br><button onclick="agregarAlCarrito('ART-00077', 'Mac Mini M2 Pro 16RAM / 1TB / 10CPU / 16GPU', '3218750', 'cantidad11')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00078</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_880349-MLA71949295464_092023-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">Mac Mini M2 Pro 32RAM / 512GB / 10CPU / 16GPU</span></H5><br><p>$ <span id="precio">3539062.5</span></p><br><p> U$S <span id="oferta">2831.25</span></p><br><input type="number" id="cantidad12"><br><button onclick="agregarAlCarrito('ART-00078', 'Mac Mini M2 Pro 32RAM / 512GB / 10CPU / 16GPU', '3539062.5', 'cantidad12')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00079</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_880349-MLA71949295464_092023-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">Mac Mini M2 Pro 32RAM / 1TB / 10CPU / 16GPU</span></H5><br><p>$ <span id="precio">4023437.5</span></p><br><p> U$S <span id="oferta">3218.75</span></p><br><input type="number" id="cantidad13"><br><button onclick="agregarAlCarrito('ART-00079', 'Mac Mini M2 Pro 32RAM / 1TB / 10CPU / 16GPU', '4023437.5', 'cantidad13')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00080</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_880349-MLA71949295464_092023-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">Mac Mini M2 Pro 32RAM / 1TB / 19CPU / 16GPU</span></H5><br><p>$ <span id="precio">4507812.5</span></p><br><p> U$S <span id="oferta">3606.25</span></p><br><input type="number" id="cantidad14"><br><button onclick="agregarAlCarrito('ART-00080', 'Mac Mini M2 Pro 32RAM / 1TB / 19CPU / 16GPU', '4507812.5', 'cantidad14')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00081</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_990193-MLA49692852330_042022-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">Apple 27" Studio Display Standard Glass, Tilt Adjustable Stand (MK0U3LL/A)</span></H5><br><p>$ <span id="precio">4406250</span></p><br><p> U$S <span id="oferta">3525</span></p><br><input type="number" id="cantidad15"><br><button onclick="agregarAlCarrito('ART-00081', 'Apple 27" Studio Display Standard Glass, Tilt Adjustable Stand (MK0U3LL/A)', '4406250', 'cantidad15')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00082</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_990193-MLA49692852330_042022-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">Apple 27" Studio Display Nano-Texture Glass, Tilt Adjustable Stand (MMYW3LL/A)</span></H5><br><p>$ <span id="precio">5054687.5</span></p><br><p> U$S <span id="oferta">4043.75</span></p><br><input type="number" id="cantidad16"><br><button onclick="agregarAlCarrito('ART-00082', 'Apple 27" Studio Display Nano-Texture Glass, Tilt Adjustable Stand (MMYW3LL/A)', '5054687.5', 'cantidad16')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00083</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_990193-MLA49692852330_042022-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">Apple 27" Studio Display Standard Glass, Tilt & Height Adjustable Stand (MK0Q3LL/A)</span></H5><br><p>$ <span id="precio">5210937.5</span></p><br><p> U$S <span id="oferta">4168.75</span></p><br><input type="number" id="cantidad17"><br><button onclick="agregarAlCarrito('ART-00083', 'Apple 27" Studio Display Standard Glass, Tilt & Height Adjustable Stand (MK0Q3LL/A)', '5210937.5', 'cantidad17')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00084</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_990193-MLA49692852330_042022-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">Apple 27" Studio Display Mac Studio M2 Max 32RAM / 512GB / 12CPU / 30GPU / 32 CORE (MQH73LZ/A)</span></H5><br><p>$ <span id="precio">4343750</span></p><br><p> U$S <span id="oferta">3475</span></p><br><input type="number" id="cantidad18"><br><button onclick="agregarAlCarrito('ART-00084', 'Apple 27" Studio Display Mac Studio M2 Max 32RAM / 512GB / 12CPU / 30GPU / 32 CORE (MQH73LZ/A)', '4343750', 'cantidad18')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00085</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_990193-MLA49692852330_042022-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">Apple 27" Studio Display Mac Studio M2 Ultra 128RAM / 2TB / 24CPU / 76GPU / 32CORE (Z17Z00187)</span></H5><br><p>$ <span id="precio">10815000</span></p><br><p> U$S <span id="oferta">8652</span></p><br><input type="number" id="cantidad19"><br><button onclick="agregarAlCarrito('ART-00085', 'Apple 27" Studio Display Mac Studio M2 Ultra 128RAM / 2TB / 24CPU / 76GPU / 32CORE (Z17Z00187)', '10815000', 'cantidad19')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00086</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_990193-MLA49692852330_042022-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">Apple 27" Studio Display Apple Mac Pro M2 Ultra 64RAM / 2TB / 24CPU / 60GPU / 32CORE (Z1710016M)</span></H5><br><p>$ <span id="precio">13132500</span></p><br><p> U$S <span id="oferta">10506</span></p><br><input type="number" id="cantidad20"><br><button onclick="agregarAlCarrito('ART-00086', 'Apple 27" Studio Display Apple Mac Pro M2 Ultra 64RAM / 2TB / 24CPU / 60GPU / 32CORE (Z1710016M)', '13132500', 'cantidad20')">Agregar al carrito</button></div></aside>
+    
+    <script>
+      // Ejemplo de agregar productos al carrito desde la página de inicio
+      // Puedes personalizar esto según tu diseño y necesidades
+      
+      function agregarProductoDesdeIndex(codigo, titulo, precio, cantidad) {
+          agregarAlCarrito(codigo, titulo, precio, cantidad);
+          alert('Producto agregado al carrito desde la página de inicio.');
+      }
+    </script>
+    
+    <script>
+        document.getElementById('buscar-btn').addEventListener('click', function() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const catalogItems = document.querySelectorAll('.catalogo-item');
+            let found = false;
+    
+            // Busca en la página actual (ps5.html)
+            catalogItems.forEach(item => {
+                const titleElement = item.querySelector('#titulo');
+                if (titleElement) {
+                    const titleText = titleElement.textContent.toLowerCase();
+                    if (titleText.includes(searchTerm)) {
+                        found = true;
+                        item.classList.remove('hidden');
+                        titleElement.classList.add('highlight');
+                    } else {
+                        item.classList.add('hidden');
+                        titleElement.classList.remove('highlight');
+                    }
+                }
+            });
+    
+            // Si no se encuentra en la página actual, redirige a otras páginas
+            if (!found) {
+                if (searchTerm.includes('celulares') || searchTerm.includes('iphone')) {
+                    window.location.href = 'celulares.html';
+                } else if (searchTerm.includes('waltchs') || searchTerm.includes('waltch')) {
+                    window.location.href = 'waltchs.html';
+                } else if (searchTerm.includes('macbook') || searchTerm.includes('mackbook')) {
+                    window.location.href = 'mackbooks.html';
+                } else if (searchTerm.includes('imac') || searchTerm.includes('imac')) {
+                    window.location.href = 'imac.html';
+                }else if (searchTerm.includes('accesorios') || searchTerm.includes('magic')) {
+                    window.location.href = 'accesorios.html';
+                }else {
+                    alert('Producto no encontrado');
+                }
+            }
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menu-icon');
+        const menu = document.querySelector('.menu');
+    
+        menuToggle.addEventListener('click', function() {
+            menu.classList.toggle('active');
+        });
+    });
+    
+        </script>
+    </body>
+    </html>
+    
+
+<script>
+  // Ejemplo de agregar productos al carrito desde la página de inicio
+  // Puedes personalizar esto según tu diseño y necesidades
+  
+  function agregarProductoDesdeIndex(codigo, titulo, precio, cantidad) {
+      agregarAlCarrito(codigo, titulo, precio, cantidad);
+      alert('Producto agregado al carrito desde la página de inicio.');
+  }
+</script>
+
+
+
+
+
+
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-icon');
+    const menu = document.querySelector('.menu');
+
+    menuToggle.addEventListener('click', function() {
+        menu.classList.toggle('active');
+    });
+});
+
+    </script>
+</body>
+</html>

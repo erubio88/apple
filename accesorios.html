@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Online</title>
+    <link rel="stylesheet" type="text/css" href="prueba.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="carrito.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"> <img src="artbuy.png" alt="Logo" width="100" height="100" id="logo"></a>
+            </div>
+            <div class="menu-toggle">
+                <img src="menu.jpeg" alt="Menu" id="menu-icon">
+            </div>
+            <ul class="menu">
+                
+                <li><a href="#">Categorías</a>
+                    <ul class="submenu">
+                        <li><a href="celulares.html">CELULARES</a></li>
+                        <li><a href="ipads.html">IPADS</a></li>
+                        <li><a href="macbooks.html">MACBOOKS</a></li>
+                        <li><a href="waltchs.html">WALTCHS</a></li>
+                        <li><a href="imac.html">IMAC</a></li>
+                        <li><a href="accesorios.html">ACCESORIOS</a></li>
+                    </ul>
+                </li>
+                <li><a href="contactos.html">Contactos</a></li>
+                <li class="cart-icon"><a href="compras.html"> <img src="carrito.png" alt="Carrito" width="30" height="30"></a></li>
+            </ul>
+            <form id="form-inline" class="form-inline">
+                <input class="form-control" type="search" id="searchInput" placeholder="Buscar productos" aria-label="Search">
+                <button type="button" id="buscar-btn">
+                    <img src="buscar.png" alt="Buscar" class="btn-img" width="40" height="40">
+                </button>
+            </form>
+        </div>
+    </nav>
+<aside id="catalogo"><div class="catalogo-item"><span id="codigo">ART-00061</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_664823-MLA71304726003_082023-O.jpg" alt="imagen" width="200" height="150"><br><H5><span id="titulo">Magic KeyBoard 11" for iPad Air M2</span></H5><br><p>$ <span id="precio">593750</span></p><br><p> U$S <span id="oferta">475</span></p><br><input type="number" id="cantidad1"><br><button onclick="agregarAlCarrito('ART-00061', 'Magic KeyBoard 11" for iPad Air M2', '593750', 'cantidad1')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00062</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_700387-MLA76735970287_052024-O.jpg" alt="imagen" width="200" height="150"><br><H5><span id="titulo">Magic KeyBoard 13" for iPad Pro M4</span></H5><br><p>$ <span id="precio">765625</span></p><br><p> U$S <span id="oferta">612.5</span></p><br><input type="number" id="cantidad2"><br><button onclick="agregarAlCarrito('ART-00062', 'Magic KeyBoard 13" for iPad Pro M4', '765625', 'cantidad2')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00063</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_770852-MLA48394504095_112021-O.jpg" alt="imagen" width="200" height="150"><br><H5><span id="titulo">AirTag (1 Pack)</span></H5><br><p>$ <span id="precio">101562.5</span></p><br><p> U$S <span id="oferta">81.25</span></p><br><input type="number" id="cantidad3"><br><button onclick="agregarAlCarrito('ART-00063', 'AirTag (1 Pack)', '101562.5', 'cantidad3')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00064</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_729202-MLA46147515274_052021-O.jpg" alt="imagen" width="200" height="150"><br><H5><span id="titulo">AirTag (4 Pack)</span></H5><br><p>$ <span id="precio">218750</span></p><br><p> U$S <span id="oferta">175</span></p><br><input type="number" id="cantidad4"><br><button onclick="agregarAlCarrito('ART-00064', 'AirTag (4 Pack)', '218750', 'cantidad4')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00065</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_911533-MLA53244962397_012023-O.jpg" alt="imagen" width="200" height="150"><br><H5><span id="titulo">Apple TV 4K New - 64GB (2022) MN873LL/A</span></H5><br><p>$ <span id="precio">359375</span></p><br><p> U$S <span id="oferta">287.5</span></p><br><input type="number" id="cantidad5"><br><button onclick="agregarAlCarrito('ART-00065', 'Apple TV 4K New - 64GB (2022) MN873LL/A', '359375', 'cantidad5')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00066</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_911533-MLA53244962397_012023-O.jpg" alt="imagen" width="200" height="150"><br><H5><span id="titulo">Apple TV 4K New - 128GB (2022) MN893LL/A</span></H5><br><p>$ <span id="precio">437500</span></p><br><p> U$S <span id="oferta">350</span></p><br><input type="number" id="cantidad6"><br><button onclick="agregarAlCarrito('ART-00066', 'Apple TV 4K New - 128GB (2022) MN893LL/A', '437500', 'cantidad6')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00087</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_655451-MLA51640001083_092022-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">Magic Mouse 2 White</span></H5><br><p>$ <span id="precio">234375</span></p><br><p> U$S <span id="oferta">187.5</span></p><br><input type="number" id="cantidad7"><br><button onclick="agregarAlCarrito('ART-00087', 'Magic Mouse 2 White', '234375', 'cantidad7')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00088</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_682337-MLU70909452761_082023-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">Magic Mouse 2 Black</span></H5><br><p>$ <span id="precio">265625</span></p><br><p> U$S <span id="oferta">212.5</span></p><br><input type="number" id="cantidad8"><br><button onclick="agregarAlCarrito('ART-00088', 'Magic Mouse 2 Black', '265625', 'cantidad8')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00089</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_822892-MLU75329046065_032024-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">Magic TrackPad 2 White</span></H5><br><p>$ <span id="precio">328125</span></p><br><p> U$S <span id="oferta">262.5</span></p><br><input type="number" id="cantidad9"><br><button onclick="agregarAlCarrito('ART-00089', 'Magic TrackPad 2 White', '328125', 'cantidad9')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00090</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_735555-MLA74980030597_032024-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">Magic TrackPad 2 Black</span></H5><br><p>$ <span id="precio">359375</span></p><br><p> U$S <span id="oferta">287.5</span></p><br><input type="number" id="cantidad10"><br><button onclick="agregarAlCarrito('ART-00090', 'Magic TrackPad 2 Black', '359375', 'cantidad10')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00091</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_682494-MLU73594539446_122023-F.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">Magic KeyBoard With Numeric Keypad</span></H5><br><p>$ <span id="precio">328125</span></p><br><p> U$S <span id="oferta">262.5</span></p><br><input type="number" id="cantidad11"><br><button onclick="agregarAlCarrito('ART-00091', 'Magic KeyBoard With Numeric Keypad', '328125', 'cantidad11')">Agregar al carrito</button></div><div class="catalogo-item"><span id="codigo">ART-00092</span><br><img src="https://http2.mlstatic.com/D_NQ_NP_682494-MLU73594539446_122023-O.webp" alt="imagen" width="200" height="150"><br><H5><span id="titulo">Magic KeyBoard With Touch ID and Numeric Keypad</span></H5><br><p>$ <span id="precio">421875</span></p><br><p> U$S <span id="oferta">337.5</span></p><br><input type="number" id="cantidad12"><br><button onclick="agregarAlCarrito('ART-00092', 'Magic KeyBoard With Touch ID and Numeric Keypad', '421875', 'cantidad12')">Agregar al carrito</button></div></aside>
+
+<script>
+  // Ejemplo de agregar productos al carrito desde la página de inicio
+  // Puedes personalizar esto según tu diseño y necesidades
+  
+  function agregarProductoDesdeIndex(codigo, titulo, precio, cantidad) {
+      agregarAlCarrito(codigo, titulo, precio, cantidad);
+      alert('Producto agregado al carrito desde la página de inicio.');
+  }
+</script>
+
+<script>
+    document.getElementById('buscar-btn').addEventListener('click', function() {
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+        const catalogItems = document.querySelectorAll('.catalogo-item');
+        let found = false;
+
+        // Busca en la página actual (ps5.html)
+        catalogItems.forEach(item => {
+            const titleElement = item.querySelector('#titulo');
+            if (titleElement) {
+                const titleText = titleElement.textContent.toLowerCase();
+                if (titleText.includes(searchTerm)) {
+                    found = true;
+                    item.classList.remove('hidden');
+                    titleElement.classList.add('highlight');
+                } else {
+                    item.classList.add('hidden');
+                    titleElement.classList.remove('highlight');
+                }
+            }
+        });
+
+        // Si no se encuentra en la página actual, redirige a otras páginas
+        if (!found) {
+            if (searchTerm.includes('celulares') || searchTerm.includes('iphone')) {
+                window.location.href = 'celulares.html';
+            } else if (searchTerm.includes('waltchs') || searchTerm.includes('waltch')) {
+                window.location.href = 'waltchs.html';
+            } else if (searchTerm.includes('macbook') || searchTerm.includes('mackbook')) {
+                window.location.href = 'mackbooks.html';
+            } else if (searchTerm.includes('imac') || searchTerm.includes('imac')) {
+                window.location.href = 'imac.html';
+            }else if (searchTerm.includes('accesorios') || searchTerm.includes('magic')) {
+                window.location.href = 'accesorios.html';
+            }else {
+                alert('Producto no encontrado');
+            }
+        }
+    });
+</script>
+
+
+
+
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-icon');
+    const menu = document.querySelector('.menu');
+
+    menuToggle.addEventListener('click', function() {
+        menu.classList.toggle('active');
+    });
+});
+
+    </script>
+</body>
+</html>

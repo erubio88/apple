@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Online</title>
+    <link rel="stylesheet" type="text/css" href="prueba.css">
+    
+    <script src="carrito.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="artbuy.png" alt="Logo" width="100" height="100" id="logo"></a>
+            </div>
+            <div class="menu-toggle">
+                <img src="menu.jpeg" alt="Menu" id="menu-icon">
+            </div>
+            <ul class="menu">
+                <li><a href="#">Categorías</a>
+                    <ul class="submenu">
+                        <li><a href="ps5.html">Consolas y accesorios</a></li>
+                        <li><a href="apple.html">Apple</a></li>
+                        <li><a href="camaras.html">Camaras digitales y accesorios</a></li>
+                    </ul>
+                </li>
+                <li class="cart-icon"><a href="compras.html"> <img src="carrito.png" alt="Carrito" width="30" height="30"></a></li>
+            </ul>
+            
+        </div>
+    </nav>
+      <div class="container mt-4">
+        <h2>Enviar WhatsApp</h2>
+        <form id="whatsappForm">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono (sin código de país):</label>
+                <input type="tel" id="telefono" name="telefono" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" class="form-control" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar WhatsApp</button>
+        </form>
+    </div>
+
+    <script>
+       document.getElementById('whatsappForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+    
+    // Get input values
+    const nombre = document.getElementById('nombre').value;
+    const apellido = document.getElementById('apellido').value;
+    const mensaje = document.getElementById('mensaje').value;
+
+    // Formatted WhatsApp message
+    const formattedMessage = `Sr/Sra ${nombre} ${apellido}, ${mensaje}`;
+    
+    // WhatsApp URL, always sending to +5491130613999
+    const whatsappUrl = `https://wa.me/5491160224513?text=${encodeURIComponent(formattedMessage)}`;
+    
+    // Redirect to WhatsApp link
+    window.location.href = whatsappUrl;
+});
+
+    </script>
+       <script>
+        document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menu-icon');
+      const menu = document.querySelector('.menu');
+  
+      menuToggle.addEventListener('click', function() {
+          menu.classList.toggle('active');
+      });
+  });
+  
+      </script>
+</body>
+</html>

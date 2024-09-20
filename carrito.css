@@ -1,0 +1,285 @@
+/* Estilos generales para el carrito */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Estilo del título */
+h1 {
+    color: #004a99;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Estilo de la tabla del carrito */
+table {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #00bfff;
+}
+
+th {
+    background-color: #004a99;
+    color: white;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f0f8ff;
+}
+
+/* Estilo del total */
+#total {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #004a99;
+    text-align: right;
+    margin-right: 20px;
+}
+
+p {
+    text-align: right;
+    margin-right: 20px;
+}
+
+/* Estilos para botones */
+button {
+    background-color: #00bfff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+button:hover {
+    background-color: #004a99;
+}
+
+/* Enlaces */
+a {
+    display: inline-block;
+    margin: 20px;
+    text-decoration: none;
+    color: #004a99;
+}
+
+/* Botón de eliminar en la tabla */
+td button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+td button img {
+    width: 10px;
+    height: 10px;
+}
+
+td button:hover img {
+    opacity: 0.7;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    table {
+        width: 90%;
+    }
+
+    th, td {
+        font-size: 0.9em;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    p {
+        text-align: center;
+    }
+}
+
+/* --- Estilos del menú de navegación --- */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f81c; /* Azul oscuro */
+    padding: 10px 20px;
+    position: relative;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+}
+
+.menu-toggle {
+    display: none; /* Ocultar el menú en dispositivos grandes */
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-left: 20px;
+    position: relative;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ffffff; /* Blanco */
+    font-weight: bold;
+}
+
+/* Ajustes al tamaño del submenu */
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #dcf116;
+    list-style: none;
+    padding: 5px; /* Ajustar el padding para reducir tamaño */
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    width: 180px; /* Reducir ancho del submenú */
+}
+
+.menu li:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    margin: 5px 0; /* Reducir margen para submenú más compacto */
+}
+
+.submenu a {
+    color: #ffffff;
+    font-size: 0.9em; /* Reducir tamaño de fuente para hacer más pequeño el texto */
+}
+
+/* Estilos del formulario de búsqueda */
+#form-inline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.form-control {
+    border-radius: 30px;
+    border: 1px solid #cccccc;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+#buscar-btn {
+    background: transparent;
+    border: none;
+}
+
+.btn-img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Estilos para tablet y móvil */
+@media (max-width: 768px) {
+    .nav-container {
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-toggle img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #e2bb0e;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        padding: 10px;
+        border: 1px solid #cccccc;
+        z-index: 1;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    .submenu {
+        position: relative;
+        top: 0;
+        left: 0;
+        background-color: #b0b314;
+        width: 100%; /* Ajustar el ancho para pantallas pequeñas */
+    }
+
+    .submenu li {
+        margin: 5px 0;
+    }
+
+    .submenu a {
+        font-size: 0.8em; /* Tamaño de fuente aún más reducido en móvil */
+    }
+
+    .logo {
+        order: 3;
+    }
+
+    #form-inline {
+        order: 2;
+        flex-grow: 1;
+        justify-content: center;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .menu-toggle {
+        order: 1;
+    }
+
+    .form-control {
+        width: 100%;
+    }
+
+    #buscar-btn {
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #buscar-btn img {
+        width: 30px;
+        height: 30px;
+    }
+}

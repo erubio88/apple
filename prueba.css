@@ -1,0 +1,175 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f81c; /* Azul oscuro */
+    padding: 10px 20px;
+    position: relative;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+}
+
+.menu-toggle {
+    display: none; /* Ocultar el menú en dispositivos grandes */
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-left: 20px;
+    position: relative;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ffffff; /* Blanco */
+    font-weight: bold;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #dcf116;
+    list-style: none;
+    padding: 10px;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+}
+
+.menu li:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    margin: 0;
+}
+
+.submenu a {
+    color: #ffffff;
+}
+
+/* Estilos para el formulario de búsqueda */
+#form-inline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.form-control {
+    border-radius: 30px;
+    border: 1px solid #cccccc;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+#buscar-btn {
+    background: transparent;
+    border: none;
+}
+
+.btn-img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Estilos para el carrito */
+.menu li img {
+    vertical-align: middle;
+}
+
+/* Estilos para tablet y móvil */
+@media (max-width: 768px) {
+    .nav-container {
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block; /* Mostrar el ícono de menú en dispositivos móviles */
+        cursor: pointer;
+    }
+
+    .menu-toggle img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .menu {
+        display: none; /* Ocultar menú por defecto en móviles */
+        flex-direction: column;
+        width: 100%;
+        background-color: #e2bb0e;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        padding: 10px;
+        border: 1px solid #cccccc;
+        z-index: 1;
+    }
+
+    .menu.active {
+        display: flex; /* Mostrar menú al hacer clic */
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    .submenu {
+        position: relative;
+        top: 0;
+        left: 0;
+        background-color: #b0b314;
+    }
+
+    /* Ajustes para móviles */
+    .logo {
+        order: 3; /* Logo a la derecha */
+    }
+
+    #form-inline {
+        order: 2; /* Buscar en el centro */
+        flex-grow: 1;
+        justify-content: center;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .menu-toggle {
+        order: 1; /* Menú a la izquierda */
+    }
+
+    .form-control {
+        width: 0%; /* Input ocupa el 70% */
+    }
+
+    #buscar-btn {
+        width: 30%; /* Botón ocupa el 30% */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #buscar-btn img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
